@@ -1,0 +1,21 @@
+{% layout "layout.liquid" %}
+{% block content %}
+
+<div>
+
+    <a href="/dogs/new"><button>Add Pet</button></a>
+    <a href="/user/logout"><button>Logout</button></a>
+    {% for dog in dogs %}
+    <article>
+        <a href="/dogs/{{ dog._id }}"><img src="{{dog.img}}.png">
+            
+        </a>
+    </article>
+
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}
+
