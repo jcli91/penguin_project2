@@ -4,30 +4,41 @@
 <div>
     <form action="/dogs/{{dog.id}}?_method=PUT" method="post">
         <fieldset>
-            <legend>Edit {{dog.name}}</legend>
+            <legend>EDIT {{dog.name}}</legend>
             <label>
-                Name: <input type="text" name="name" placeholder="enter pet's name" value="{{dog.name}}"/>
+                <h4>Name</h4> <input type="text" name="name" placeholder="enter pet's name" value="{{dog.name}}"/>
             </label>
             <label>
-                Age: <input type="number" name="age" placeholder="enter pet's age" value="{{dog.age}}" />
+                <h4>Age</h4> <input type="text" name="age" placeholder="enter pet's age" value="{{dog.age}}" />
             </label>
             <label>
-                Breed: <input type="text" name="breed" placeholder="pet breed" value="{{dog.breed}}"/>
+                <h4>Breed</h4> <input type="text" name="breed" placeholder="pet breed" value="{{dog.breed}}"/>
             </label>
             <label>
-                Gender: <input type="text" name="gender" placeholder="Male or Female" value="{{dog.gender}}"/>
+                <h4>Gender</h4> <input type="text" name="gender" placeholder="male or female" value="{{dog.gender}}"/>
             </label>
             <label>
-                Likes: <input type="text" name="hobbies" placeholder="Details" value="{{dog.hobbies}}"/>
+                <h4>Likes</h4> <input type="text" name="hobbies" placeholder="details" value="{{dog.hobbies}}"/>
             </label>
             <label>
-                ImageURL: <input type="text" name="img" placeholder="Enter Pet Image URL" value="{{dog.img}}"/>
+                <h4>ProfileURL</h4> <input type="text" name="img" placeholder="enter pet image URL" value="{{dog.img}}"/>
             </label>
+            <label>
+                <h4>SlideshowURL</h4> <input type="text" name="slideshow1" placeholder="enter pet image URL" value="{{dog.slideshow1}}"/><br>
+                <input type="text" name="slideshow2" placeholder="enter pet image URL" value="{{dog.slideshow2}}"/><br>
+                <input type="text" name="slideshow3" placeholder="enter pet image URL" value="{{dog.slideshow3}}"/>
+
+
+            </label>
+
+
+
         </fieldset>
-        <input type="submit" value="Update Pet"/>
+        <input type="submit" value="UPDATE"/>
     </form>
-
-
+</div>
+<div>
+    <a href="/dogs"><button>HOME</button></a>
 </div>
 
 

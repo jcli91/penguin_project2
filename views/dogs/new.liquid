@@ -4,29 +4,42 @@
 <div>
     <form action="/dogs" method="post">
         <fieldset>
-            <legend>Add Pet</legend>
+            <ul>
+            <legend>PET DETAILS</legend>
             <label>
-                Name: <input type="text" name="name" placeholder="enter pet's name" />
+                <h4>Name</h4><input type="text" name="name" placeholder="enter pet's name" />
             </label>
             <label>
-                Age: <input type="number" name="age" placeholder="enter pet's age" />
+                <h4>Age</h4> <input type="text" name="age" placeholder="enter pet's age" />
             </label>
             <label>
-                Breed: <input type="text" name="breed" placeholder="pet breed"/>
+                <h4>Breed</h4> <input type="text" name="breed" placeholder="pet breed"/>
             </label>
             <label>
-                Gender: <input type="text" name="gender" placeholder="Male or Female"/>
+                <h4>Gender</h4> <input type="text" name="gender" placeholder="male or female"/>
             </label>
             <label>
-                Likes: <input type="text" name="hobbies" placeholder="Details"/>
+                <h4>Likes</h4> <input type="text" name="hobbies" placeholder="details"/>
             </label>
             <label>
-                ImageURL: <input type="text" name="img" placeholder="Enter Pet Image URL"/>
+                <h4>ProfileURL</h4> <input type="text" name="img" placeholder="enter pet image URL"/>
             </label>
-        </fieldset>
-        <input type="submit" value="Add Pet"/>
-    </form>
+            <label>
+                <h4>SlideshowURL</h4> <input type="text" name="slideshow1" placeholder="enter pet image URL"/><br>
+               <input type="text" name="slideshow2" placeholder="enter pet image URL"/><br>
+                <input type="text" name="slideshow3" placeholder="enter pet image URL"/>
 
+            </label>
+
+            </ul>
+        </fieldset>
+        <input type="submit" value="ADD" class="add"/>
+    </form>
+    
+    
+</div>
+<div>
+    <a href="/dogs"><button>HOME</button></a>
 
 </div>
 

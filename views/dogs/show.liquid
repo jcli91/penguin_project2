@@ -1,28 +1,235 @@
-{% layout "layout.liquid" %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
 
-<article>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetStars</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
 
-    <img src="{{dog.img}}.png">
-    {{dog.name}}
-    <h2>
+
+    {% block content %}
+
+    <article>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+    
+                <img src="{{dog.img}}">
+    
+            </div>
+
+            <div class="mySlides fade">
+    
+                <img src="{{dog.slideshow1}}">
+    
+            </div>
+    
+            <div class="mySlides fade">
+    
+                <img src="{{dog.slideshow2}}">
+    
+            </div>
+    
+            <div class="mySlides fade">
+    
+                <img src="{{dog.slideshow3}}">
+    
+            </div>
+    
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    
+        <!-- <img src="{{dog.img}}.png" id="show"> -->
+        <h1>{{dog.name}}</h1>
+
         <ul>
             <li>
-                
-                {{dog.age}}
-                {{dog.breed}}
-                {{dog.gender}}
+                <h2>AGE: {{dog.age}}</h2>
+                <h2>BREED: {{dog.breed}}</h2>
+                <h2>GENDER: {{dog.gender}}</h2>
             </li>
         </ul>
-        {{dog.hobbies}}
-
-    </h2>
-    <a href="/dogs/{{dog._id}}/edit"><button>EDIT</button></a>
-    <form action="/dogs/{{ dog._id }}?_method=DELETE" method="post">
-        <input type="submit" value="DELETE">
-    </form>
-    <a href="/dogs"><button>Home</button></a>
-</article>
+        <h2>LIKES: {{dog.hobbies}}</h2>
 
 
-{% endblock %}
+        <a href="/dogs/{{dog._id}}/edit"><button>EDIT</button></a>
+        <form action="/dogs/{{ dog._id }}?_method=DELETE" method="post">
+            <input type="submit" value="DELETE">
+        </form>
+        <a href="/dogs"><button>HOME</button></a>
+    </article>
+
+   
+   
+    {% endblock %}
+
+    <style>
+        h2 {
+            padding: 0;
+            margin: 5px auto;
+            text-align: center;
+            background-color: rgb(245, 222, 17);
+            width: 30%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border: 3px solid black;
+
+        }
+
+        ul {
+            text-align: center;
+        }
+
+        h1 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            padding: 5px;
+            margin: 0 auto;
+            font-size: 40px;
+            margin-bottom: 10px;
+            width: 40%;
+            background-color: rgb(245, 222, 17);
+            border: 3px solid black;
+            text-decoration: underline;
+            border-radius: 20px;
+        }
+
+        img {
+            display: flex;
+            flex-wrap: wrap;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 5px solid black;
+            border-radius: 5%;
+            margin: 10px auto;
+        }
+        img:hover{
+            background-color: #717171;
+        }
+
+        img #show {
+            width: 250px;
+            height: 250px;
+        }
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 100%;
+
+
+        }
+
+
+        ul {
+            list-style-type: none;
+            text-decoration: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background-color: rgb(245, 222, 17);
+            border: 5px solid black;
+
+        }
+
+        input {
+            cursor: pointer;
+            margin: 0 auto;
+            width: 200px;
+            color: crimson;
+            background-color: black;
+            font-family: arial;
+            border: 3px solid rgb(245, 222, 17);
+             border-radius: 20px;
+        }
+        input:hover{
+            background: crimson;
+            color: black;
+        }
+
+        button {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            margin: 10px auto;
+            text-align: center;
+            width: 200px;
+            color: rgb(245, 222, 17);
+            background-color: black;
+            font-family: arial;
+            border: 3px solid gold;
+            border-radius: 20px;
+        }
+        button:hover{
+            background: rgb(245, 222, 17);
+            color:black
+        }
+
+        a.button1 {
+            margin: 0 auto;
+        }
+
+        body {
+            background-image: url("https://t4.ftcdn.net/jpg/02/43/32/31/360_F_243323114_WAckdZIsuwbaxTdoRO6RGtaCHklAXJNt.jpg");
+
+        }
+
+        fieldset {
+            margin: 0 auto;
+            color: black;
+            background-color: black;
+            border: 5px solid rgb(245, 222, 17);
+        }
+
+        legend {
+            font-family: arial;
+            font-weight: 700;
+            color: rgb(245, 222, 17);
+            background-color: black;
+            text-align: center;
+            border: 2px solid rgb(245, 222, 17);
+            border-radius: 20px;
+            width: 50%;
+
+        }
+
+        h4 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background-color: rgb(245, 222, 17);
+            width: 60%;
+            border: 3px solid black;
+            text-align: center;
+        }
+
+        a {
+            margin: 20px;
+            text-align: center;
+            width: 30px;
+            margin: 0 auto;
+        }
+
+        li {
+            padding: 0;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+            margin: 5px;
+        }
+    </style>

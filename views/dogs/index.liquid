@@ -1,15 +1,22 @@
 {% layout "layout.liquid" %}
 {% block content %}
 
+<header>
+    <h1>PetStars</h1>
+    <a href="/dogs/new" class="button1"><button>ADD PET</button></a>
+    <a href="/user/logout" class="button2"><button>LOG OUT</button></a>
+</header>
+    
+</div>
 <div>
 
-    <a href="/dogs/new"><button>Add Pet</button></a>
-    <a href="/user/logout"><button>Logout</button></a>
     {% for dog in dogs %}
-    <article>
-        <a href="/dogs/{{ dog._id }}"><img src="{{dog.img}}.png">
+    <article id="index">
+        <ul>
+        <a href="/dogs/{{ dog._id }}"><img src="{{dog.img}}">
             
         </a>
+        </ul>
     </article>
 
     {% endfor %}
